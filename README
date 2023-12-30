@@ -1,0 +1,20 @@
+ARM 64-bit Hello, world!
+--------------------------
+
+A simple hello world program in 64-bit ARM assembly.
+
+You can find the related Youtube video here: 
+
+Usage:
+```bash
+> ./build <asm file name>
+```
+
+eg:
+```bash
+> ls
+hello.s
+> ./build hello
+> ./hello
+Hello, world!
+```
