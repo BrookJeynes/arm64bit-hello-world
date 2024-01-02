@@ -23,4 +23,6 @@ _start:
 
 .data
 msg: .ascii "Hello, world!\n"
+// The assembler will calculate the length of the string
+// by subtracting the address of `msg` from the current address
 len = . - msg
