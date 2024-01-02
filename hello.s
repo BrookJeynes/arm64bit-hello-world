@@ -12,7 +12,7 @@ _start:
     // write(int fd, const void *buf, size_t count)
     mov    x0, #1          // fd = STDOUT_FILENO
     ldr    x1, =msg        // buf = msg
-    mov    x2, #14         // count = len
+    ldr    x2, =len        // count = len
     mov    x8, #64         // `write()` is syscall #64
     svc    #0              // Invoke syscall
 
@@ -23,3 +23,6 @@ _start:
 
 .data
 msg: .ascii "Hello, world!\n"
+// The assembler will calculate the length of the string
+// by subtracting the address of `msg` from the current address
+len = . - msg
